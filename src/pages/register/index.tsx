@@ -1,7 +1,6 @@
 import { Button } from "components/Button"
 import { FieldText } from "components/FieldText"
 import { NextPage } from "next"
-import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { AiOutlineMail } from "react-icons/ai"
 import { IoMdPerson } from "react-icons/io"
