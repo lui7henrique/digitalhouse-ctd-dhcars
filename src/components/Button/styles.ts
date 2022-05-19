@@ -2,9 +2,11 @@ import styled, { css } from "styled-components"
 
 import { ButtonProps } from "."
 
-type ContainerProps = Pick<ButtonProps, "color" | "variant">
+type ContainerProps = Omit<ButtonProps, "label">
 
 export const Container = styled.button<ContainerProps>`
+  background-color: ${(props) => props.theme};
+
   cursor: pointer;
   transition: all 0.2s;
 
