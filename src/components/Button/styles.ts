@@ -11,6 +11,11 @@ export const Container = styled.button<ContainerProps>`
   cursor: pointer;
   transition: all 0.2s;
 
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 22px;
+  color: ${({ theme }) => theme.colors.white};
+
   ${({ variant, theme }) =>
     variant === "red" &&
     css`
@@ -35,6 +40,10 @@ export const Container = styled.button<ContainerProps>`
     variant === "gray" &&
     css`
       background-color: ${theme.colors.shape};
+
+      &:hover {
+        background-color ${theme.colors.shape_hover};
+      }
     `}
 
   border: none;
