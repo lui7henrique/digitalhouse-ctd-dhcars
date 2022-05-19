@@ -10,6 +10,7 @@
     "test": "jest",
     "test:watch": "yarn test --watch",
     "make:component": "yarn plop --plopfile .generators/component.plopfile.js",
+    "make:page": "yarn plop --plopfile .generators/page.plopfile.js",
     "storybook": "start-storybook -p 6006 -s ./src",
     "build:storybook": "build-storybook -s ./src",
     "husky:prepare": "husky install",
