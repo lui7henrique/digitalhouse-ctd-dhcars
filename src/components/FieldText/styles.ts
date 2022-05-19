@@ -14,7 +14,7 @@ export const Container = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    width: auto;
+    width: 100%;
   }
 `
 

@@ -54,4 +54,8 @@ export const Container = styled.button<ContainerProps>`
 
   border: none;
   color: white;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 100%;
+  }
 `
