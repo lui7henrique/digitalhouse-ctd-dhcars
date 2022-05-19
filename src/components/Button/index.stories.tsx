@@ -15,8 +15,10 @@ export default {
   }
 } as ComponentMeta<typeof Button>
 
+// Template
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 
+// Examples
 export const Red = Template.bind({})
 Red.args = {
   variant: "red",

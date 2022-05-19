@@ -6,7 +6,6 @@ type ContainerProps = Omit<ButtonProps, "label">
 
 export const Container = styled.button<ContainerProps>`
   background-color: ${(props) => props.theme};
-  padding: 29px 72px;
 
   cursor: pointer;
   transition: all 0.2s;
@@ -15,6 +14,13 @@ export const Container = styled.button<ContainerProps>`
   font-size: 1rem;
   line-height: 22px;
   color: ${({ theme }) => theme.colors.white};
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: ${({ theme }) => theme.space[16]};
+  width: ${({ theme }) => theme.space[96]};
 
   ${({ variant, theme }) =>
     variant === "red" &&
@@ -48,4 +54,8 @@ export const Container = styled.button<ContainerProps>`
 
   border: none;
   color: white;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 100%;
+  }
 `

@@ -1,11 +1,9 @@
-import { Button } from "components/Button"
-
 const Home = () => {
   return (
     <>
-      <Button label="Botão vermelho" />
-      <Button label="Botão verde" variant="green" />
-      <Button label="Botão cinza" variant="gray" />
+      <h1>dh-cars</h1>
+      <p>o mais foda</p>
+      <sup>TAPORRA 🔥</sup>
     </>
   )
 }

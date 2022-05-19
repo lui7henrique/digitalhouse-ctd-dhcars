@@ -22,5 +22,19 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'Inter', sans-serif;
+    background-color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.text};
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: ${({ theme }) => theme.colors.title};
+  }
+
+  p {
+    color: ${({ theme }) => theme.colors.text};
+  }
+
+  input:focus, textarea:focus, select:focus{
+    outline: none;
   }
 `

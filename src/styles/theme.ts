@@ -13,6 +13,8 @@ export default {
     shape: "#29292E",
     shape_hover: "#050505",
 
+    border: "#ebebf0",
+
     // texts, titles
     title: "#29292E",
     text: "#7A7A80",

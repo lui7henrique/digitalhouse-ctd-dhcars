@@ -1,0 +1,17 @@
+import { ComponentStory, ComponentMeta } from "@storybook/react"
+
+import { {{name}} } from "."
+
+export default {
+  title: "Components/{{name}}",
+  component: {{name}},
+  argTypes: {}
+} as ComponentMeta<typeof {{name}}>
+
+// Template
+const Template: ComponentStory<typeof {{name}}> = (args) => <{{name}} {...args} />
+
+// Examples
+export const Example = Template.bind({})
+Example.args = {}
+
