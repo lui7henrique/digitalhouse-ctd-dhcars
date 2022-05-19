@@ -11,6 +11,7 @@ export default {
     black: "#1B1B1F",
     white: "#FFFFFF",
     shape: "#29292E",
+    shape_hover: "#050505",
 
     // texts, titles
     title: "#29292E",
