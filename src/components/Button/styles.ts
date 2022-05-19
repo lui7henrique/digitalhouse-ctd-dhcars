@@ -2,28 +2,39 @@ import styled, { css } from "styled-components"
 
 import { ButtonProps } from "."
 
-export const Button = styled.button<Omit<ButtonProps, "label">>`
-  background-color: ${(props) => props.color};
-  /* padding: ${(props) =>
-    props.size === "lg" ? "2rem 4.5rem" : "1rem 2.75rem;"}; */
+type ContainerProps = Omit<ButtonProps, "label">
+
+export const Container = styled.button<ContainerProps>`
+  background-color: ${(props) => props.theme};
+  padding: 29px 72px;
+
   cursor: pointer;
+  transition: all 0.2s;
 
-  ${(props) =>
-    props.size === "lg" &&
+  ${({ variant, theme }) =>
+    variant === "red" &&
     css`
-      padding: 2rem 4.5rem;
+      background-color ${theme.colors.principal};
+
+      &:hover {
+        background-color ${theme.colors.principal_hover};
+      }
     `}
 
-  ${(props) =>
-    props.size === "md" &&
+  ${({ variant, theme }) =>
+    variant === "green" &&
     css`
-      padding: 1rem;
+      background-color: ${theme.colors.green};
+
+      &:hover {
+        background-color ${theme.colors.green_hover};
+      }
     `}
 
-  ${(props) =>
-    props.size === "sm" &&
+  ${({ variant, theme }) =>
+    variant === "gray" &&
     css`
-      padding: 0.5rem;
+      background-color: ${theme.colors.shape};
     `}
 
   border: none;
