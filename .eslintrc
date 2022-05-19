@@ -1,12 +1,20 @@
 {
   "env": {
     "jest": true,
+    "es2021": true,
     "node": true
   },
   "extends": ["next", "next/core-web-vitals", "plugin:prettier/recommended"],
-  "plugins": ["react-hooks", "eslint-plugin-import-helpers"],
+  "plugins": [
+    "react-hooks",
+    "eslint-plugin-import-helpers",
+    "@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
   "rules": {
     "react/prop-types": "off",
+    "multiline-ternary": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",

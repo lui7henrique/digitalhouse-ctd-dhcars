@@ -1,7 +1,8 @@
-/* eslint-disable @next/next/no-page-custom-font */
 import { AppProps } from "next/app"
 import Head from "next/head"
+import { ThemeProvider } from "styled-components"
 import { GlobalStyles } from "styles/global"
+import theme from "styles/theme"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -17,8 +18,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="A simple project starter to work with Typescript, React, NextJS and Styled Components"
         />
       </Head>
-      <GlobalStyles />
-      <Component {...pageProps} />
+
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
 }
