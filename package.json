@@ -10,20 +10,23 @@
     "test": "jest",
     "test:watch": "yarn test --watch",
     "make:component": "yarn plop --plopfile .generators/component.plopfile.js",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006 -s ./src",
+    "build:storybook": "build-storybook -s ./src",
     "husky:prepare": "husky install",
     "prepare": "husky install"
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.15.0",
     "@types/jest": "^26.0.24",
+    "@types/react-icons": "^3.0.0",
     "next": "11.0.1",
     "next-pwa": "^5.2.24",
     "plop": "^3.1.0",
     "prettier": "^2.3.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-hook-form": "^7.31.1",
+    "react-icons": "^4.3.1",
     "styled-components": "^5.3.0"
   },
   "devDependencies": {
@@ -54,6 +57,7 @@
     "husky": "^7.0.0",
     "jest": "^27.0.6",
     "jest-styled-components": "^7.0.5",
+    "storybook-dark-mode": "^1.1.0",
     "typescript": "4.3.5"
   }
 }

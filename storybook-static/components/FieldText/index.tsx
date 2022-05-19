@@ -1,10 +1,23 @@
 // Vendors
+import {
+  forwardRef,
+  ForwardRefRenderFunction,
+  InputHTMLAttributes,
+  useState
+} from "react"
+import { IconType } from "react-icons"
+import { HiOutlineEye } from "react-icons/hi"
+import { useTheme } from "styled-components"
 
 // Components
 import * as S from "./styles"
 
 // Types
-export type {{name}}Props = {}
+export type FieldTextProps = {
+  label?: string
+  icon?: IconType
+  isPassword?: boolean
+} & InputHTMLAttributes<HTMLInputElement>
 
 /*
 |-----------------------------------------------------------------------------
@@ -14,7 +27,10 @@ export type {{name}}Props = {}
 |
 */
 
-export const {{name}} = (props: {{name}}Props) => {
+export const FieldTextBase: ForwardRefRenderFunction<
+  HTMLInputElement,
+  FieldTextProps
+> = (props, ref) => {
   /*
   |-----------------------------------------------------------------------------
   | Constants
@@ -22,7 +38,7 @@ export const {{name}} = (props: {{name}}Props) => {
   |
   |
   */
-  const {} = props
+  const { label, icon: Icon, isPassword, ...inputProps } = props
 
   /*
   |-----------------------------------------------------------------------------
@@ -31,6 +47,7 @@ export const {{name}} = (props: {{name}}Props) => {
   |
   |
   */
+  const { colors } = useTheme()
 
   /*
   |-----------------------------------------------------------------------------
@@ -39,6 +56,7 @@ export const {{name}} = (props: {{name}}Props) => {
   |
   |
   */
+  const [type, setType] = useState(isPassword ? "password" : "text")
 
   /*
   |-----------------------------------------------------------------------------
@@ -73,7 +91,30 @@ export const {{name}} = (props: {{name}}Props) => {
   */
   return (
     <S.Container>
-      <h1>{{name}}</h1>
+      {Icon && (
+        <S.IconContainer>
+          {<Icon size={20} color={colors.text} />}
+        </S.IconContainer>
+      )}
+
+      <S.Content>
+        <S.Label htmlFor={props.name}>{label}</S.Label>
+        <S.Input type={type} ref={ref} {...inputProps} />
+      </S.Content>
+
+      {isPassword && (
+        <S.EyeContainer
+          onClick={() =>
+            setType((previousType) =>
+              previousType === "text" ? "password" : "text"
+            )
+          }
+        >
+          <HiOutlineEye size={20} color={colors.text} />
+        </S.EyeContainer>
+      )}
     </S.Container>
   )
 }
+
+export const FieldText = forwardRef(FieldTextBase)

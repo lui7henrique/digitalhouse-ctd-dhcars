@@ -4,7 +4,8 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "@react-theming/storybook-addon"
+    "@react-theming/storybook-addon",
+    "storybook-dark-mode"
   ],
   framework: "@storybook/react",
   core: {

@@ -1,10 +1,14 @@
 // Vendors
+import { ButtonHTMLAttributes } from "react"
 
 // Components
 import * as S from "./styles"
 
 // Types
-export type {{name}}Props = {}
+export type ButtonProps = {
+  label: string
+  variant?: "red" | "green" | "gray"
+} & ButtonHTMLAttributes<HTMLButtonElement>
 
 /*
 |-----------------------------------------------------------------------------
@@ -14,7 +18,7 @@ export type {{name}}Props = {}
 |
 */
 
-export const {{name}} = (props: {{name}}Props) => {
+export const Button = (props: ButtonProps) => {
   /*
   |-----------------------------------------------------------------------------
   | Constants
@@ -22,7 +26,7 @@ export const {{name}} = (props: {{name}}Props) => {
   |
   |
   */
-  const {} = props
+  const { label, color, variant = "red", ...buttonProps } = props
 
   /*
   |-----------------------------------------------------------------------------
@@ -72,8 +76,8 @@ export const {{name}} = (props: {{name}}Props) => {
   |
   */
   return (
-    <S.Container>
-      <h1>{{name}}</h1>
+    <S.Container color={color} variant={variant} {...buttonProps}>
+      {label}
     </S.Container>
   )
 }
