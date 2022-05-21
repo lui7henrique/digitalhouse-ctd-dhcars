@@ -1,5 +1,7 @@
 // Vendors
+import Link from "next/link"
 import { ButtonHTMLAttributes } from "react"
+import { ClassicSpinner } from "react-spinners-kit"
 
 // Components
 import * as S from "./styles"
@@ -8,6 +10,9 @@ import * as S from "./styles"
 export type ButtonProps = {
   label: string
   variant?: "red" | "green" | "gray"
+  outline?: boolean
+  isLoading?: boolean
+  href?: string
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
 /*
@@ -26,7 +31,15 @@ export const Button = (props: ButtonProps) => {
   |
   |
   */
-  const { label, color, variant = "red", ...buttonProps } = props
+  const {
+    label,
+    color,
+    variant = "red",
+    outline,
+    isLoading,
+    href,
+    ...buttonProps
+  } = props
 
   /*
   |-----------------------------------------------------------------------------
@@ -75,8 +88,30 @@ export const Button = (props: ButtonProps) => {
   |
   |
   */
-  return (
-    <S.Container color={color} variant={variant} {...buttonProps}>
+  return href ? (
+    <Link href={href}>
+      <a style={{ textDecoration: "none" }}>
+        <S.Container
+          color={color}
+          variant={variant}
+          outline={outline}
+          isLoading={isLoading}
+          {...buttonProps}
+        >
+          {isLoading && <ClassicSpinner size={20} />}
+          {label}
+        </S.Container>
+      </a>
+    </Link>
+  ) : (
+    <S.Container
+      color={color}
+      variant={variant}
+      outline={outline}
+      isLoading={isLoading}
+      {...buttonProps}
+    >
+      {isLoading && <ClassicSpinner size={20} />}
       {label}
     </S.Container>
   )

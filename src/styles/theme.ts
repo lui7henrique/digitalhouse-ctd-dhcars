@@ -10,13 +10,15 @@ export default {
 
     black: "#1B1B1F",
     white: "#FFFFFF",
+
+    background: "#F4F5F6",
     shape: "#29292E",
     shape_hover: "#050505",
 
     border: "#ebebf0",
 
     // texts, titles
-    title: "#29292E",
+    title: "#41414d",
     text: "#7A7A80",
     details: "#AEAEB3"
   },
@@ -84,5 +86,12 @@ export default {
     lg: "62em", // 992px
     xl: "80em", // 1280px
     "2xl": "96em" // 1536px
+  },
+  header: {
+    maxWidth: "1180px",
+    height: "5rem"
+  },
+  sidebar: {
+    width: "4rem"
   }
 }

@@ -2,7 +2,6 @@
 
 // Components
 import { {{name}}Template} from "templates/{{name}}Template"
-import * as S from "./styles"
 
 // Types
 export type {{name}}Props = {}

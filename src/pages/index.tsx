@@ -1,11 +1,7 @@
+import { StartTemplate } from "templates/StartTemplate"
+
 const Home = () => {
-  return (
-    <>
-      <h1>dh-cars</h1>
-      <p>o mais foda</p>
-      <sup>TAPORRA 🔥</sup>
-    </>
-  )
+  return <StartTemplate />
 }
 
 export default Home

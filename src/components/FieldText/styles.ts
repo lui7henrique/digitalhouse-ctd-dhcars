@@ -1,27 +1,51 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
-export const Container = styled.div`
+type Error = {
+  error?: boolean
+}
+
+export const FieldContainer = styled.div`
   display: flex;
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  height: ${({ theme }) => theme.space[16]};
+  flex-direction: column;
+  gap: ${({ theme }) => theme.space[1]};
+
   width: ${({ theme }) => theme.space[96]};
-  overflow: hidden;
-
-  transition: all 0.2s;
-
-  &:hover {
-    border: 1px solid ${({ theme }) => theme.colors.details};
-  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     width: 100%;
   }
 `
 
-export const IconContainer = styled.div`
+export const InputContainer = styled.div<Error>`
+  display: flex;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  height: ${({ theme }) => theme.space[16]};
+  overflow: hidden;
+
+  transition: all 0.2s;
+  background-color: ${({ theme }) => theme.colors.white};
+
+  &:hover {
+    border: 1px solid ${({ theme }) => theme.colors.details};
+  }
+
+  ${({ error }) =>
+    error &&
+    css`
+      border: 1px solid ${({ theme }) => theme.colors.principal} !important;
+    `}
+`
+
+export const IconContainer = styled.div<Error>`
   height: 100%;
   padding: ${({ theme }) => theme.space[6]};
   border-right: 2px solid ${({ theme }) => theme.colors.border};
+
+  ${({ error }) =>
+    error &&
+    css`
+      border-right: 1px solid ${({ theme }) => theme.colors.principal} !important;
+    `}
 `
 
 export const Content = styled.div`
@@ -67,4 +91,9 @@ export const EyeContainer = styled.div`
 
   padding-right: ${({ theme }) => theme.space[6]};
   cursor: pointer;
+`
+
+export const FieldError = styled.div`
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  color: ${({ theme }) => theme.colors.principal};
 `

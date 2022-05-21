@@ -1,10 +1,8 @@
-const withPWA = require("next-pwa")
-const isProd = process.env.NODE_ENV === "production"
+/** @type {import('next').NextConfig} */
 
-module.exports = withPWA({
+module.exports = {
   reactStrictMode: true,
-  pwa: {
-    dest: "public",
-    disable: !isProd
+  images: {
+    domains: ["ui-avatars.com"]
   }
-})
+}

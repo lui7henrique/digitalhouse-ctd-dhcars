@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate",
+  "name": "dh-cars",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,36 +11,33 @@
     "test:watch": "yarn test --watch",
     "make:component": "yarn plop --plopfile .generators/component.plopfile.js",
     "make:page": "yarn plop --plopfile .generators/page.plopfile.js",
-    "storybook": "start-storybook -p 6006 -s ./src",
-    "build:storybook": "build-storybook -s ./src",
-    "husky:prepare": "husky install",
-    "prepare": "husky install"
+    "make:context": "yarn plop --plopfile .generators/context.plopfile.js"
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.15.0",
+    "@hookform/resolvers": "^2.8.10",
+    "@supabase/supabase-js": "1.35.2",
+    "@types/aos": "^3.0.4",
     "@types/jest": "^26.0.24",
     "@types/react-icons": "^3.0.0",
-    "next": "11.0.1",
+    "aos": "^2.3.4",
+    "next": "12.1.4",
     "next-pwa": "^5.2.24",
     "plop": "^3.1.0",
     "prettier": "^2.3.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hook-form": "^7.31.1",
+    "react-hot-toast": "^2.2.0",
     "react-icons": "^4.3.1",
-    "styled-components": "^5.3.0"
+    "react-modern-drawer": "^1.1.1",
+    "react-spinners-kit": "^1.9.1",
+    "sharp": "^0.30.4",
+    "styled-components": "^5.3.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
-    "@react-theming/storybook-addon": "^1.1.5",
-    "@storybook/addon-actions": "^6.5.0",
-    "@storybook/addon-essentials": "^6.5.0",
-    "@storybook/addon-interactions": "^6.5.0",
-    "@storybook/addon-links": "^6.5.0",
-    "@storybook/builder-webpack5": "^6.5.0",
-    "@storybook/manager-webpack5": "^6.5.0",
-    "@storybook/react": "^6.5.0",
-    "@storybook/testing-library": "^0.0.11",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@types/react": "17.0.16",
@@ -55,10 +52,8 @@
     "eslint-plugin-import-helpers": "^1.1.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^7.0.0",
     "jest": "^27.0.6",
     "jest-styled-components": "^7.0.5",
-    "storybook-dark-mode": "^1.1.0",
     "typescript": "4.3.5"
   }
 }

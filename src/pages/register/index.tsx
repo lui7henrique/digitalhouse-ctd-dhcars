@@ -1,45 +1,43 @@
-import { Button } from "components/Button"
-import { FieldText } from "components/FieldText"
-import { NextPage } from "next"
-import { useForm } from "react-hook-form"
-import { AiOutlineMail } from "react-icons/ai"
-import { IoMdPerson } from "react-icons/io"
-import styled from "styled-components"
+// Vendors
 
-const Container = styled.form`
-  width: 100vw;
-  height: 100vh;
+// Components
+import { LayoutDefault } from "layouts/Default"
+import { RegisterTemplate } from "templates/RegisterTemplate"
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-`
+// Types
+export type RegisterProps = {}
 
-const Register: NextPage = () => {
-  const { register, handleSubmit } = useForm()
+/*
+|-----------------------------------------------------------------------------
+| Page
+|-----------------------------------------------------------------------------
+|
+|
+*/
 
-  const onSubmit = (data: any) => {
-    alert(JSON.stringify(data, null, 4))
-  }
+const Register = (props: RegisterProps) => {
+  const {} = props
 
+  /*
+  |-----------------------------------------------------------------------------
+  | Renders
+  |-----------------------------------------------------------------------------
+  |
+  |
+  */
   return (
-    <Container onSubmit={handleSubmit(onSubmit)}>
-      <h1>Crie sua conta</h1>
-      <p>Faça seu cadastro de forma rápida e fácil.</p>
-
-      <FieldText icon={IoMdPerson} placeholder="Nome" {...register("name")} />
-      <FieldText
-        icon={AiOutlineMail}
-        placeholder="E-mail"
-        type="email"
-        {...register("email")}
-      />
-      <FieldText icon={AiOutlineMail} placeholder="CNH" {...register("cnh")} />
-      <Button label="Cadastrar" type="submit" />
-    </Container>
+    <LayoutDefault header={{ title: "Register" }}>
+      <RegisterTemplate />
+    </LayoutDefault>
   )
 }
 
 export default Register
+
+/*
+ |-----------------------------------------------------------------------------
+ | NextJS Data Fetching (SSR, SSG)
+ |-----------------------------------------------------------------------------
+ |
+ |
+ */

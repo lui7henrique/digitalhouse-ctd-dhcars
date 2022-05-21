@@ -22,7 +22,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'Inter', sans-serif;
-    background-color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
   }
 
@@ -30,11 +30,23 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.title};
   }
 
-  p {
+  p, a {
     color: ${({ theme }) => theme.colors.text};
+  }
+
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.principal};
   }
 
   input:focus, textarea:focus, select:focus{
     outline: none;
   }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
 `
