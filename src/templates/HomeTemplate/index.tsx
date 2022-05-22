@@ -73,7 +73,7 @@ export const HomeTemplate = (props: HomeTemplateProps) => {
   */
   return (
     <S.Container>
-      <h1>HomeTemplate</h1>
+      <h1>Carros disponíveis</h1>
     </S.Container>
   )
 }

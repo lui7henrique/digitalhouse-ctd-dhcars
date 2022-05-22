@@ -23,6 +23,8 @@ export const ContentContainer = styled.div`
 
 export const ContentWrapper = styled.div`
   max-width: ${({ theme }) => theme.header.maxWidth};
-  margin: ${({ theme }) => theme.space[16]} auto;
+  margin: ${({ theme }) => theme.space[10]} auto;
   padding: 0 ${({ theme }) => theme.space[4]};
+
+  min-height: 100vh;
 `

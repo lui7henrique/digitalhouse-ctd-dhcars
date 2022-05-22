@@ -97,7 +97,7 @@ export const AuthContextProvider = (props: AuthContextProviderProps) => {
           await handleAuthChange("SIGNED_IN", session)
 
           toast.promise(
-            push("/home"),
+            push("/me"),
             {
               loading: "Redirecionando para o app...",
               success: <b>Login feito com sucesso.</b>,
@@ -172,10 +172,12 @@ export const AuthContextProvider = (props: AuthContextProviderProps) => {
               style: defaultToastStyles()
             }
           )
+
+          push("/me")
         }
       } catch {}
     },
-    [defaultToastStyles]
+    [defaultToastStyles, push]
   )
 
   /*

@@ -26,7 +26,11 @@ const Home = (props: HomeProps) => {
   |
   */
   return (
-    <LayoutDefault>
+    <LayoutDefault
+      header={{
+        title: "Início"
+      }}
+    >
       <HomeTemplate />
     </LayoutDefault>
   )

@@ -17,11 +17,6 @@ const componentConfig = {
       type: "add",
       path: "../src/components/{{name}}/styles.ts",
       templateFile: "templates/component/styles.txt"
-    },
-    {
-      type: "add",
-      path: "../src/components/{{name}}/index.stories.tsx",
-      templateFile: "templates/component/index.stories.txt"
     }
   ]
 }

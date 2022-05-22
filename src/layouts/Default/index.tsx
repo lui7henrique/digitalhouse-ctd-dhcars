@@ -1,4 +1,5 @@
 // Vendors
+import { Footer } from "components/Footer"
 import { Header, HeaderProps } from "components/Header"
 import { Sidebar } from "components/Sidebar"
 import { ReactNode } from "react"
@@ -87,6 +88,7 @@ export const LayoutDefault = (props: LayoutProps) => {
 
         <S.ContentContainer>
           <S.ContentWrapper>{children}</S.ContentWrapper>
+          <Footer />
         </S.ContentContainer>
       </S.Content>
     </S.Container>

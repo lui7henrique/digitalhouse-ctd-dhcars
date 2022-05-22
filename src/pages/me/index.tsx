@@ -2,6 +2,8 @@
 
 // Components
 import { LayoutDefault } from "layouts/Default"
+import { supabase } from "services/supabase"
+import { LoginTemplate } from "templates/LoginTemplate"
 import { MeTemplate } from "templates/MeTemplate"
 
 // Types
@@ -18,6 +20,8 @@ export type MeProps = {}
 const Me = (props: MeProps) => {
   const {} = props
 
+  const user = supabase.auth.user()
+
   /*
   |-----------------------------------------------------------------------------
   | Renders
@@ -29,10 +33,10 @@ const Me = (props: MeProps) => {
   return (
     <LayoutDefault
       header={{
-        title: `Bem-vindo!`
+        title: user ? `Bem-vindo!` : ""
       }}
     >
-      <MeTemplate />
+      {user ? <MeTemplate /> : <LoginTemplate />}
     </LayoutDefault>
   )
 }
